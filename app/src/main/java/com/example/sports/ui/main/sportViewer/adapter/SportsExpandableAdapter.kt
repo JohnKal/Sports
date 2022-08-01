@@ -57,7 +57,6 @@ class SportsExpandableAdapter(
         return (isExpanded) True 2 False 1
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return when (viewType) {

@@ -5,16 +5,15 @@ import com.example.data.businessmodel.SportEventsModel
 import com.example.data.businessmodel.SportType
 import com.example.network.model.responses.SportsEvents
 import javax.inject.Inject
-import kotlin.reflect.typeOf
 
 class SportsEventsMapper @Inject constructor(): Mapper<List<SportsEvents>, List<SportEventsModel>> {
 
     override fun map(input: List<SportsEvents>): List<SportEventsModel> =
-        input.map { sport ->
+        mapList(input) { sport ->
             SportEventsModel(
                 sportType = SportType.valueOf(sport.i ?: ""),
                 title = sport.d ?: "",
-                events = sport.e.map { event ->
+                events = mapList(sport.e) { event ->
                     EventModel(
                         eventId = event.i ?: "",
                         sportId = event.si ?: "",

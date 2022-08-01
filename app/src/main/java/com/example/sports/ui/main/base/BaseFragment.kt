@@ -25,13 +25,6 @@ abstract class BaseFragment<FragmentBinding : ViewBinding, VM : ViewModel>
     private val binding: FragmentBinding
         get() = _binding as FragmentBinding
 
-    //lateinit var baseApplication: SportsApplication
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        //baseApplication = requireContext().applicationContext as SportsApplication
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

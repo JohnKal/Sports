@@ -23,7 +23,6 @@ class DataRepositoryImpl @Inject constructor(
             }
         }
 
-
     override suspend fun getSportsEvents(): List<SportEventsModel>? {
         val response = serviceEndpoints.getSports()
 
